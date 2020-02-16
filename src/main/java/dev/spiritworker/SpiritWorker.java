@@ -48,6 +48,7 @@ public class SpiritWorker {
 		DatabaseHelper.createAccount("Test", "aaaaa");
 
 		SoulWorker.createFileWithItems();
+		SoulWorker.createFileWithMonsters();
 
 		// Run server
 		if (MODE != RunMode.GAME) {

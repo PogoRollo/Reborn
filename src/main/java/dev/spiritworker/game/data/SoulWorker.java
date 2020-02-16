@@ -47,10 +47,14 @@ public class SoulWorker {
 		return monsterDefs;
 	}
 
+	public static boolean isValidMonsterId(int id) {
+		return monsterDefs.containsKey(id);
+	}
+
 	public static void createFileWithItems()
 	{
 		File dir = new File(".");
-		try(FileWriter writer = new FileWriter("items.txt", true)) {
+		try(FileWriter writer = new FileWriter("unpacked-resources/defitems.ur", true)) {
 			int sizehashMap = itemDefs.size();
 			int i = 0;
 			int k = 0;
@@ -66,6 +70,30 @@ public class SoulWorker {
 				}
 			writer.flush();
 			}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void createFileWithMonsters()
+	{
+		File dir = new File(".");
+		try(FileWriter writer = new FileWriter("unpacked-resources/monsters.ur", true)) {
+			int sizehashMap = monsterDefs.size();
+			int i = 0;
+			int k = 0;
+			while(sizehashMap > 0) {
+				while(true) {
+					k++;
+					if(isValidMonsterId(k)) {
+						break;
+					}
+				}
+				writer.write(monsterDefs.get(k).getAllInfo());
+				sizehashMap--;
+			}
+			writer.flush();
+		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}

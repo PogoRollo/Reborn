@@ -6,10 +6,15 @@ import java.util.HashMap;
 import dev.spiritworker.game.character.GameCharacter;
 import dev.spiritworker.game.character.Stat;
 import dev.spiritworker.game.data.SoulWorker;
+import dev.spiritworker.game.data.def.MonsterDef;
+import dev.spiritworker.game.data.spawns.MazeData;
 import dev.spiritworker.game.inventory.InventorySlotType;
 import dev.spiritworker.game.inventory.InventoryTab;
 import dev.spiritworker.game.inventory.Item;
+import dev.spiritworker.game.map.Monster;
 import dev.spiritworker.net.packet.PacketBuilder;
+import dev.spiritworker.server.game.GameServer;
+import dev.spiritworker.util.Position;
 
 public class CommandHandler {
 	private static HashMap<String, PlayerCommand> list = new HashMap<String, PlayerCommand>();
@@ -171,4 +176,18 @@ public class CommandHandler {
 		}
 	}
 
+	public static class GetPosition extends  PlayerCommand {
+
+		public GetPosition() {
+			this.setLevel(0);
+		}
+
+		@Override
+		public void execute(GameCharacter character, String raw)
+		{
+			Position posit = character.getPosition();
+			String position = "X:" + posit.getX() + " Y:" + posit.getY() + " Z:" + posit.getZ();
+			ChatManager.handleSystemChat(character, position);
+		}
+	}
 }

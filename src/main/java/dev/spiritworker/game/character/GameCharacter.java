@@ -2,6 +2,7 @@ package dev.spiritworker.game.character;
 
 import dev.spiritworker.Constants;
 import dev.spiritworker.database.DatabaseHelper;
+import dev.spiritworker.game.data.spawns.MazeData;
 import dev.spiritworker.game.inventory.Inventory;
 import dev.spiritworker.game.inventory.Item;
 import dev.spiritworker.game.inventory.data.BankUpgradeData;

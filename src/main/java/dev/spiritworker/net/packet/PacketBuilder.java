@@ -941,21 +941,11 @@ public class PacketBuilder {
 		
 		return p.getPacket();
 	}
-	
+
 	public static byte[] sendClientSpawnMonster(Monster monster) {
 		PacketWriter p = new PacketWriter(PacketOpcodes.ClientSpawnMonsters);
 		
 		p.writeUint16(1);
-		monster.write(p);
-		
-		return p.getPacket();
-	}
-	
-
-	public static byte[] sendClientAddMonster(Monster monster) {
-		PacketWriter p = new PacketWriter(PacketOpcodes.ClientMonsterAdd);
-		
-		p.writeUint8(1);
 		monster.write(p);
 		
 		return p.getPacket();

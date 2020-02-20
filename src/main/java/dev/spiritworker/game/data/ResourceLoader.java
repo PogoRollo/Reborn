@@ -23,6 +23,8 @@ public class ResourceLoader {
 		loadFromResourceShort("tb_district.res", DistrictDef.class, SoulWorker.getDistrictDefs());
 		loadFromResourceShort("tb_Maze_Info.res", MazeDef.class, SoulWorker.getMazeDefs());
 		loadFromResource("tb_Monster.res", MonsterDef.class, SoulWorker.getMonsterDefs());
+
+		loadFromResource("tb_NPC.res", NpcDef.class, SoulWorker.getNpcDefs());
 		
 		loadMazes();
 	}

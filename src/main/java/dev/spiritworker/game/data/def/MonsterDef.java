@@ -321,7 +321,8 @@ public class MonsterDef extends ResourceDef {
 	}
 	public String getAllInfo()
 	{
-		return 				"v1 : " + v1 +
+		return 	"id : " + getId() +
+				"	v1 : " + v1 +
 				"	v2 : " + v2 +
 				"	v3 : " + v3 +
 				"	v4 : " + v4 +

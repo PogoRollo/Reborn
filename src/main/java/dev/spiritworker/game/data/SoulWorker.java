@@ -14,6 +14,7 @@ public class SoulWorker {
 	private static Int2ObjectMap<SkillDef> skillDefs = new Int2ObjectOpenHashMap<SkillDef>();
 	private static Int2ObjectMap<MazeDef> mazeDefs = new Int2ObjectOpenHashMap<MazeDef>();
 	private static Int2ObjectMap<MonsterDef> monsterDefs = new Int2ObjectOpenHashMap<MonsterDef>();
+	private static Int2ObjectMap<NpcDef> npcDefs = new Int2ObjectOpenHashMap<NpcDef>();
 	
 	public static Int2ObjectMap<ItemDef> getItemDefs() {
 		return itemDefs;
@@ -46,6 +47,8 @@ public class SoulWorker {
 	public static Int2ObjectMap<MonsterDef> getMonsterDefs() {
 		return monsterDefs;
 	}
+
+	public static Int2ObjectMap<NpcDef> getNpcDefs() { return npcDefs; }
 
 	public static boolean isValidMonsterId(int id) {
 		return monsterDefs.containsKey(id);
@@ -90,6 +93,30 @@ public class SoulWorker {
 					}
 				}
 				writer.write(monsterDefs.get(k).getAllInfo());
+				sizehashMap--;
+			}
+			writer.flush();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void createFileWithNpc()
+	{
+		File dir = new File(".");
+		try(FileWriter writer = new FileWriter("unpacked-resources/npcs.ur", true)) {
+			int sizehashMap = npcDefs.size();
+			int i = 0;
+			int k = 0;
+			while(sizehashMap > 0) {
+				while(true) {
+					k++;
+					if(isValidMonsterId(k)) {
+						break;
+					}
+				}
+				writer.write(npcDefs.get(k).getAllInfo());
 				sizehashMap--;
 			}
 			writer.flush();

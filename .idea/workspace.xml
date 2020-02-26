@@ -2,16 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91f8db8e-ae97-4336-8fd3-02238c5aa7e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/data/def/NpcDef.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/Npc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/mazes/21211.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/mazes/21211.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/character/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/character/GameCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/data/ResourceLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/data/ResourceLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/SpiritWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/SpiritWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/data/SoulWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/data/SoulWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/data/def/MonsterDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/data/def/MonsterDef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/data/def/NpcDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/data/def/NpcDef.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/ChatManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/ChatManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/CommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/District.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/GameMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/Maze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/net/packet/PacketBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/net/packet/PacketBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/server/game/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/server/game/GameServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpacked-resources/defitems.ur" beforeDir="false" afterPath="$PROJECT_DIR$/unpacked-resources/defitems.ur" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpacked-resources/monsters.ur" beforeDir="false" afterPath="$PROJECT_DIR$/unpacked-resources/monsters.ur" afterDir="false" />
     </list>
@@ -51,6 +55,35 @@
     <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="GroovyScriptRunConfiguration" factoryName="Groovy" nameIsGenerated="true">
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -65,14 +98,26 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1581875823796">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582744085845">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581875823796" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582744085845" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1582750728540">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1582750728540" />
     <state x="707" y="366" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1581878744748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="366" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1581878744748" />
+    <state x="694" y="281" key="EnvironmentVariablesDialog" timestamp="1582744018915">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="694" y="281" key="EnvironmentVariablesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582744018915" />
+    <state x="740" y="260" key="FileChooserDialogImpl" timestamp="1582744084432">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="260" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582744084432" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1581872256368">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

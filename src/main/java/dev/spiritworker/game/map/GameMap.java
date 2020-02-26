@@ -1,9 +1,11 @@
 package dev.spiritworker.game.map;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import dev.spiritworker.game.character.GameCharacter;
+import dev.spiritworker.game.data.SoulWorker;
+import dev.spiritworker.game.data.def.NpcDef;
+import dev.spiritworker.game.data.spawns.MazeData;
 import dev.spiritworker.net.packet.PacketBuilder;
 
 public class GameMap {
@@ -33,7 +35,7 @@ public class GameMap {
 		
 		character.setMap(this);
 		getCharacters().add(character);
-		
+
 		// Broadcast
 		if (getCharacters().size() > 1) {
 			broadcastPacketFrom(character, PacketBuilder.sendClientPlayerSpawn(character));
@@ -84,7 +86,7 @@ public class GameMap {
 			character.getSession().sendPacket(PacketBuilder.sendClientPlayersInfo(character, this));
 		}
 	}
-	
+
 	public void onEnter(GameCharacter character) {
 		
 	}

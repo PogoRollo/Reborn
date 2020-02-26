@@ -13,6 +13,7 @@ import dev.spiritworker.game.character.CharacterStats;
 import dev.spiritworker.game.character.GameCharacter;
 import dev.spiritworker.game.character.Skill;
 import dev.spiritworker.game.character.Stat;
+import dev.spiritworker.game.data.def.NpcDef;
 import dev.spiritworker.game.data.def.SkillDef;
 import dev.spiritworker.game.inventory.BaseInventoryTab;
 import dev.spiritworker.game.inventory.InventorySlotType;
@@ -22,6 +23,7 @@ import dev.spiritworker.game.inventory.ItemEnhanceResult;
 import dev.spiritworker.game.map.GameMap;
 import dev.spiritworker.game.map.Maze;
 import dev.spiritworker.game.map.Monster;
+import dev.spiritworker.game.map.Npc;
 import dev.spiritworker.net.packet.util.PacketWriter;
 import dev.spiritworker.netty.SoulWorkerSession;
 import dev.spiritworker.server.auth.AuthSession;
@@ -999,6 +1001,19 @@ public class PacketBuilder {
 		// Padding
 		p.writeEmpty(6 * 8);
 		
+		return p.getPacket();
+	}
+
+	public static byte[] sendClientNpcsInfo(Collection<Npc> npcs)
+	{
+		PacketWriter p = new PacketWriter(PacketOpcodes.ClientNpcsInfo);
+
+		p.writeUint16(npcs.size());
+		for(Npc npc : npcs)
+		{
+			npc.write(p);
+		}
+
 		return p.getPacket();
 	}
 }

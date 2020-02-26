@@ -3,6 +3,7 @@ package dev.spiritworker.game.map;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import dev.spiritworker.SpiritWorker;
 import dev.spiritworker.game.character.GameCharacter;
@@ -73,7 +74,7 @@ public class Maze extends GameMap implements Runnable {
 	public synchronized Int2ObjectMap<Monster> getMonsters() {
 		return this.monsters;
 	}
-	
+
 	public synchronized Int2ObjectMap<Monster> getBosses() {
 		return this.bosses;
 	}
@@ -115,11 +116,9 @@ public class Maze extends GameMap implements Runnable {
 
 	@Override
 	public synchronized void run() {
-
 	}
 	
 	public void onEnter(GameCharacter character) {
-
 	}
 	
 	public void onLeave(GameCharacter character) {
@@ -130,8 +129,11 @@ public class Maze extends GameMap implements Runnable {
 
 	public void onEntered(GameCharacter character) {
 		// Client has loaded in
-		character.getSession().sendPacket(PacketBuilder.sendClientSpawnMonsters(this.getMonsters().values()));
+		if(this.getMonsters().values().size() != 0)
+			character.getSession().sendPacket(PacketBuilder.sendClientSpawnMonsters(this.getMonsters().values()));
 	}
+
+
 
 	// TODO TODO TODO TODO TODO TODO TODO
 	public synchronized void onSkillUse(GameCharacter character, float x, float y, float z, float angle, SkillDef skillDef) {

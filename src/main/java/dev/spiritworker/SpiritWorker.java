@@ -17,6 +17,7 @@ import dev.spiritworker.database.DatabaseManager;
 import dev.spiritworker.game.data.ResourceLoader;
 import dev.spiritworker.server.auth.AuthServer;
 import dev.spiritworker.server.game.GameServer;
+import sun.security.provider.ConfigFile;
 
 public class SpiritWorker {
 	private static Logger log = (Logger) LoggerFactory.getLogger(SpiritWorker.class);
@@ -47,8 +48,10 @@ public class SpiritWorker {
 		DatabaseManager.initialize();
 		DatabaseHelper.createAccount("Test", "aaaaa");
 
-		SoulWorker.createFileWithItems();
-		SoulWorker.createFileWithMonsters();
+		//SoulWorker.createFileWithItems();
+		//SoulWorker.createFileWithMonsters();
+		//SoulWorker.createFileWithNpcs();
+		SoulWorker.createFileWithDistricts();
 
 		// Run server
 		if (MODE != RunMode.GAME) {

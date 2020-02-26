@@ -54,6 +54,14 @@ public class SoulWorker {
 		return monsterDefs.containsKey(id);
 	}
 
+	public static boolean isValidNpcId(int id) {
+		return npcDefs.containsKey(id);
+	}
+
+	public static boolean isValidDistrictId(int id) {
+		return districtDefs.containsKey(id);
+	}
+
 	public static void createFileWithItems()
 	{
 		File dir = new File(".");
@@ -102,7 +110,7 @@ public class SoulWorker {
 		}
 	}
 
-	public static void createFileWithNpc()
+	public static void createFileWithNpcs()
 	{
 		File dir = new File(".");
 		try(FileWriter writer = new FileWriter("unpacked-resources/npcs.ur", true)) {
@@ -112,11 +120,35 @@ public class SoulWorker {
 			while(sizehashMap > 0) {
 				while(true) {
 					k++;
-					if(isValidMonsterId(k)) {
+					if(isValidNpcId(k)) {
 						break;
 					}
 				}
 				writer.write(npcDefs.get(k).getAllInfo());
+				sizehashMap--;
+			}
+			writer.flush();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void createFileWithDistricts()
+	{
+		File dir = new File(".");
+		try(FileWriter writer = new FileWriter("unpacked-resources/mazes.ur", true)) {
+			int sizehashMap = districtDefs.size();
+			int i = 0;
+			int k = 0;
+			while(sizehashMap > 0) {
+				while(true) {
+					k++;
+					if(isValidDistrictId(k)) {
+						break;
+					}
+				}
+				writer.write(districtDefs.get(k).toString());
 				sizehashMap--;
 			}
 			writer.flush();

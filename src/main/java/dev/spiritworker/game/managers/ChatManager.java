@@ -16,17 +16,9 @@ public class ChatManager {
 		return server;
 	}
 
-	public static void handleSystemChat(GameCharacter character, String message)
-	{
-		PacketWriter p = new PacketWriter(PacketOpcodes.ClientChatNormal);
-
-		p.writeUint32(character.getId());
-		p.writeUint32(1);
-		p.writeString16(message);
-	}
-
 	public void handleNormalChat(WorldSession session, String message) {
 		if (message.charAt(0) == '!') {
+			CommandHandler.session = session;
 			CommandHandler.handle(session.getCharacter(), message);
 			return;
 		}

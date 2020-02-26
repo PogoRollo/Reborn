@@ -3,6 +3,7 @@ package dev.spiritworker.game.managers;
 import java.lang.reflect.Modifier;
 import java.util.HashMap;
 
+import dev.spiritworker.SpiritWorker;
 import dev.spiritworker.game.character.GameCharacter;
 import dev.spiritworker.game.character.Stat;
 import dev.spiritworker.game.data.SoulWorker;
@@ -11,14 +12,16 @@ import dev.spiritworker.game.data.spawns.MazeData;
 import dev.spiritworker.game.inventory.InventorySlotType;
 import dev.spiritworker.game.inventory.InventoryTab;
 import dev.spiritworker.game.inventory.Item;
+import dev.spiritworker.game.map.District;
 import dev.spiritworker.game.map.Monster;
 import dev.spiritworker.net.packet.PacketBuilder;
 import dev.spiritworker.server.game.GameServer;
+import dev.spiritworker.server.world.WorldSession;
 import dev.spiritworker.util.Position;
 
 public class CommandHandler {
 	private static HashMap<String, PlayerCommand> list = new HashMap<String, PlayerCommand>();
-	
+	public static WorldSession session;
 	static {
 		try {
 			// Look for classes
@@ -187,7 +190,53 @@ public class CommandHandler {
 		{
 			Position posit = character.getPosition();
 			String position = "X:" + posit.getX() + " Y:" + posit.getY() + " Z:" + posit.getZ();
-			ChatManager.handleSystemChat(character, position);
+			//ChatManager.handleSystemChat(character, position);
+		}
+	}
+
+	public static class Teleport extends PlayerCommand
+	{
+		public Teleport() { this.setLevel(0); }
+
+		@Override
+		public void execute(GameCharacter character, String raw)
+		{
+			String[] split = raw.split(" ");
+
+			int districtId = 10003;
+			districtId = Integer.parseInt(split[0]);
+
+			District district = session.getServer().getDistrictById(districtId);
+			if(district == null)
+			{
+				SpiritWorker.getLogger().error("Teleport break. District id " + districtId + " does not exist");
+				return;
+			}
+			district.addCharacter(session.getCharacter());
+			character.getPosition().set(10000, 10000, 100);
+
+			if(districtId == 10031)
+			{
+				character.getPosition().set(42200, 47900, 250);
+			}
+
+			session.sendPacket(PacketBuilder.sendClientJoinMap(character, district));
+		}
+	}
+
+	public static class GoToPos extends PlayerCommand
+	{
+		public GoToPos() { this.setLevel(0); }
+
+		@Override
+		public void execute(GameCharacter character, String raw)
+		{
+			String[] split = raw.split(" ");
+
+			Position newPosition = new Position(Integer.parseInt(split[0]) * 100, Integer.parseInt(split[1]) * 100, Integer.parseInt(split[2]) * 100);
+			SpiritWorker.getLogger().error("New Position character - " + character.getName() + " = x: " + split[0] + ", y: " + split[1] + ", z: " + split[2]);
+			character.getPosition().set(newPosition);
+			session.sendPacket(PacketBuilder.sendClientUpdatePosition(character));
 		}
 	}
 }

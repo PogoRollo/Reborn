@@ -80,7 +80,7 @@ public class GameServer extends TcpServer {
 	@Override
 	public void onStart() {
 		SpiritWorker.getLogger().info("SpiritWorker game server startup completed!");
-		
+
 		// Create world server
 		WorldServer worldServer = new WorldServer(this, new InetSocketAddress(SpiritWorker.getConfig().WorldServerIp, SpiritWorker.getConfig().WorldServerPort));
 		worldServer.start();

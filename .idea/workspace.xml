@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91f8db8e-ae97-4336-8fd3-02238c5aa7e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/Npc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/SystemChatManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mazes/21211.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/mazes/21211.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/SpiritWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/SpiritWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/data/SoulWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/data/SoulWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/data/def/NpcDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/data/def/NpcDef.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/ChatManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/ChatManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/CommandHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/District.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/GameMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/Maze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/net/packet/PacketBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/net/packet/PacketBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/server/game/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/server/game/GameServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpacked-resources/defitems.ur" beforeDir="false" afterPath="$PROJECT_DIR$/unpacked-resources/defitems.ur" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpacked-resources/monsters.ur" beforeDir="false" afterPath="$PROJECT_DIR$/unpacked-resources/monsters.ur" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/server/world/WorldServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/server/world/WorldServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +118,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581854662095" />
+    <state x="666" y="138" key="refactoring.ChangeSignatureDialog" timestamp="1583873385124">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="138" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583873385124" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1581872277811">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

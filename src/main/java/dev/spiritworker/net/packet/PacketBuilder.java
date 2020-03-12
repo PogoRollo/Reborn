@@ -277,6 +277,16 @@ public class PacketBuilder {
 		
 		return p.getPacket();
 	}
+
+	public static byte[] sendClientSystemChat(GameCharacter character, String message) {
+		PacketWriter p = new PacketWriter(PacketOpcodes.ClientChatNormal);
+
+		p.writeUint32(character.getId());
+		p.writeUint32(1);
+		p.writeString16(message);
+
+		return p.getPacket();
+	}
 	
 	public static byte[] sendClientCharacterUpdateSpecialOptionList(WorldSession session) {
 		PacketWriter p = new PacketWriter(PacketOpcodes.ClientCharacterUpdateSpecialOptionList);

@@ -19,6 +19,8 @@ public class ChatManager {
 	public void handleNormalChat(WorldSession session, String message) {
 		if (message.charAt(0) == '!') {
 			CommandHandler.session = session;
+			CommandHandler.chatManager = this;
+
 			CommandHandler.handle(session.getCharacter(), message);
 			return;
 		}

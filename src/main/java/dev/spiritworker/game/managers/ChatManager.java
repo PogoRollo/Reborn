@@ -19,11 +19,14 @@ public class ChatManager {
 	public void handleNormalChat(WorldSession session, String message) {
 		if (message.charAt(0) == '!') {
 			CommandHandler.session = session;
+			CommandHandler.chatManager = this;
+
 			CommandHandler.handle(session.getCharacter(), message);
 			return;
 		}
 		
-		session.getCharacter().getMap().broadcastPacket(PacketBuilder.sendClientChatNormal(session, message));
+		session.getCharacter().getMap().broadcastPacket(
+				PacketBuilder.sendClientChatNormal(session, message));
 	}
 	
 	public void handlePartyChat(WorldSession session, String message) {

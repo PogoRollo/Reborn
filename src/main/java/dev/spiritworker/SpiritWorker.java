@@ -51,7 +51,7 @@ public class SpiritWorker {
 		//SoulWorker.createFileWithItems();
 		//SoulWorker.createFileWithMonsters();
 		//SoulWorker.createFileWithNpcs();
-		SoulWorker.createFileWithDistricts();
+		//SoulWorker.createFileWithDistricts();
 
 		// Run server
 		if (MODE != RunMode.GAME) {
@@ -61,6 +61,8 @@ public class SpiritWorker {
 			GameServer gameServer = new GameServer(SpiritWorker.getConfig().GameServerId, SpiritWorker.getConfig().GameServerName, new InetSocketAddress(SpiritWorker.getConfig().GameServerIp, SpiritWorker.getConfig().GameServerPort));
 			gameServer.start();
 		}
+
+
 	}
 	
 	public static Config getConfig() {

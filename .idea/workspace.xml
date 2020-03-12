@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="63ba3b77-c0c3-45e4-a5fc-6389d17ff513" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/Reborn.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
@@ -10,6 +11,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/map/Maze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpacked-resources/mazes.ur" beforeDir="false" afterPath="$PROJECT_DIR$/unpacked-resources/mazes.ur" afterDir="false" />
+=======
+    <list default="true" id="91f8db8e-ae97-4336-8fd3-02238c5aa7e0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/ChatManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/ChatManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/CommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/SystemChatManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/net/packet/PacketBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/net/packet/PacketBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/server/world/WorldServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/server/world/WorldServer.java" afterDir="false" />
+>>>>>>> 25ca330ab8b021e3d920fc682777c795483eb67a
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,8 +107,17 @@
     <state x="681" y="261" width="540" height="524" key="StructurePopup" timestamp="1583999776953">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+<<<<<<< HEAD
     <state x="681" y="261" width="540" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1583999776953" />
     <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1584033476478">
+=======
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581854662095" />
+    <state x="666" y="138" key="refactoring.ChangeSignatureDialog" timestamp="1583873385124">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="138" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583873385124" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1581872277811">
+>>>>>>> 25ca330ab8b021e3d920fc682777c795483eb67a
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584033476478" />

@@ -82,7 +82,8 @@ public class GameServer extends TcpServer {
 		SpiritWorker.getLogger().info("SpiritWorker game server startup completed!");
 
 		// Create world server
-		WorldServer worldServer = new WorldServer(this, new InetSocketAddress(SpiritWorker.getConfig().WorldServerIp, SpiritWorker.getConfig().WorldServerPort));
+		WorldServer worldServer = new WorldServer(this, new InetSocketAddress(SpiritWorker.getConfig().WorldServerIp, SpiritWorker.getConfig().WorldServerPort), characters);
+		//worldServer.setCharacters(characters);
 		worldServer.start();
 	}
 

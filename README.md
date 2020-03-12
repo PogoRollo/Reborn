@@ -1,23 +1,41 @@
 # SpiritWorker
-A WIP server emulator for SoulWorker (GF 1.7.20.2). Currently, you can spawn in the world, give yourself items, and play the very first dungeon.
+Эмулятор WIP-сервера для SoulWorker (GF 1.7.20.2). 
+Основными разработчиками проекта Reborn на данный момент являются: 
+* [sollosollo4](https://github.com/sollosollo4)
+* [a8an7a](https://github.com/a8an7a)
 
-# Running the server and client
+# Запуск сервера и клиента
 
-### Prerequisites
+### Необходимо на ПК иметь
 * Java 8 JDK
 * Mongodb (recommended 4.0+)
 * GF soulworker client (1.7.20.2) installed
 
-### Starting up the server
-1. Compile the server with `./gradlew jar`
-2. Extract the .res files from data12.v in your soulworker client/data folder into a folder called resources in your spiritworker directory (use something like https://github.com/Leayal/VData-Reader)
-3. Copy the `data` folder from the source folder to your server directory
-4. Run the server with `java -jar spiritworker.jar`, you can also run both the auth and game servers separately by adding -auth or -game as an argument
+### Запуск сервера
+1. Скомпилируйте сервер с помощью консольной команды `./gradlew jar` в корневой папке проекта, либо же запустите файл compile.bat
+2. Извлеките файлы .res из файла ресурсов data12.v в вашей папке клиента/данных SoulWorker в папку с названием resources в вашем корневом каталоге SpiritWorker (используйте что-то вроде https://github.com/Leayal/VData-Reader).
+4. @PDB@?LoadBinaryVersion
+5. Скопируйте папку `data` из папки исходников в корневую директорию вашего сервера.
+6. Запустите сервер с помощью консольной команды `java -jar spiritworker.jar`, или же запустите файл server-start.bat, вы также можете запустить как auth, так и игровой сервер отдельно, добавив -auth или -game в качестве аргумента консольной команды
+* java -jar spiritworker.jar -auth -> запустит только сервер аутентификации
+* java -jar spiritworker.jar -game -> запустит только сервер игры
 
-### Connecting with the client
-Run the client with `SoulWorker.exe --authCode aaaaa --ip 127.0.0.1 --port 9000` as its launch arguments
+### Подключение от клиента
+Запустите клиент с параметрами командной строки `SoulWorker.exe --authCode aaaaa --ip 127.0.0.1 --port 9000`.
+* aaaaa - token
+* 127.0.0.1 - ip AuthServer
+* 9000 - port AuthServer
 
-### In game commands
-`!give [item id] [count]` - Gives {count} amount of {item id}
-`!starterpack` - Gives you a full set of the Vistor's armor and Tathata’s jewelry
-`!changestat [stat id] [value]` - Sets one of your stats to {value}
+### Игровые команды
+`!give [item id] [кол-во]` - Выдаёт {количество} предмета с {id}.
+`!starterpack` - Выдаёт полный набло Vistor's armor и Tathata’s jewelry.
+`!changestat [stat id] [value]` - Высстанавливает определенному айди характеристики значение {value}.
+`!teleport [maze id]` - телепортирует игрока в другой город.
+*[10003] ROCCOTOWN
+*[10021] CANDUSCITY
+*[10031] FRACECITY
+*[10041] RUINFORTRESS
+*[10051] GRASSCOVERCAMP
+*[10061] DIPLUCEHORIZON
+*[11001] GOLDENCITADEL
+`!gotopos [x] [y] [z]` - перемещает игрока в определенные координаты. Формат xyz - как в игре.

@@ -2,11 +2,13 @@ package dev.spiritworker.server.world;
 
 import java.net.InetSocketAddress;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import dev.spiritworker.SpiritWorker;
+import dev.spiritworker.game.character.GameCharacter;
 import dev.spiritworker.game.data.SoulWorker;
 import dev.spiritworker.game.data.def.DistrictDef;
 import dev.spiritworker.game.managers.ChatManager;
@@ -26,30 +28,35 @@ public class WorldServer extends TcpServer {
 	private final ChatManager chatHandler;
 	private final ItemManager itemHandler;
 	private final MazeManager mazeManager;
-	
+
 	private final Int2ObjectMap<District> districts;
 	private final Set<Maze> mazes;
 	private District defaultDistrict;
 	
 	private WorldServerLoop serverLoop;
 	private final ExecutorService pool;
+
+	private Map<String, GameCharacter> characters;
 	
-	public WorldServer(GameServer gameServer, InetSocketAddress address) {
+	public WorldServer(GameServer gameServer, InetSocketAddress address, Map<String, GameCharacter> allCharacters) {
 		super(address);
+		characters = allCharacters;
 		this.gameServer = gameServer;
 		
 		this.chatHandler = new ChatManager(this);
 		this.itemHandler = new ItemManager(this);
 		this.mazeManager = new MazeManager(this);
-		
+
 		this.districts = new Int2ObjectOpenHashMap<District>();
 		this.setupDistricts();
-		
+
 		this.mazes = new HashSet<Maze>();
 		
 		this.pool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 		this.serverLoop = new WorldServerLoop(this);
-		
+
+		SpiritWorker.getLogger().info("Starting SpiritWorker world server...");
+
 		this.setServerInitializer(new WorldServerInitializer(this));
 	}
 
@@ -60,6 +67,8 @@ public class WorldServer extends TcpServer {
 	public void setChannelId(int i) {
 		this.channelId = i;
 	}
+
+	public Int2ObjectMap<District> getDistricts() { return this.districts; }
 	
 	public GameServer getGameServer() {
 		return this.gameServer;

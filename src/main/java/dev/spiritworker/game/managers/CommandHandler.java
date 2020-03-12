@@ -13,15 +13,20 @@ import dev.spiritworker.game.inventory.InventorySlotType;
 import dev.spiritworker.game.inventory.InventoryTab;
 import dev.spiritworker.game.inventory.Item;
 import dev.spiritworker.game.map.District;
+import dev.spiritworker.game.map.GameMap;
 import dev.spiritworker.game.map.Monster;
 import dev.spiritworker.net.packet.PacketBuilder;
+import dev.spiritworker.netty.SoulWorkerSession;
 import dev.spiritworker.server.game.GameServer;
+import dev.spiritworker.server.game.GameSession;
+import dev.spiritworker.server.world.WorldServer;
 import dev.spiritworker.server.world.WorldSession;
 import dev.spiritworker.util.Position;
 
 public class CommandHandler {
 	private static HashMap<String, PlayerCommand> list = new HashMap<String, PlayerCommand>();
 	public static WorldSession session;
+	public static ChatManager chatManager;
 	static {
 		try {
 			// Look for classes
@@ -194,8 +199,7 @@ public class CommandHandler {
 		}
 	}
 
-	public static class Teleport extends PlayerCommand
-	{
+	public static class Teleport extends PlayerCommand {
 		public Teleport() { this.setLevel(0); }
 
 		@Override
@@ -224,8 +228,7 @@ public class CommandHandler {
 		}
 	}
 
-	public static class GoToPos extends PlayerCommand
-	{
+	public static class GoToPos extends PlayerCommand {
 		public GoToPos() { this.setLevel(0); }
 
 		@Override
@@ -234,7 +237,7 @@ public class CommandHandler {
 			String[] split = raw.split(" ");
 
 			Position newPosition = new Position(Integer.parseInt(split[0]) * 100, Integer.parseInt(split[1]) * 100, Integer.parseInt(split[2]) * 100);
-			SpiritWorker.getLogger().error("New Position character - " + character.getName() + " = x: " + split[0] + ", y: " + split[1] + ", z: " + split[2]);
+			SpiritWorker.getLogger().info("New Position character - " + character.getName() + " = x: " + split[0] + ", y: " + split[1] + ", z: " + split[2]);
 			character.getPosition().set(newPosition);
 			session.sendPacket(PacketBuilder.sendClientUpdatePosition(character));
 		}

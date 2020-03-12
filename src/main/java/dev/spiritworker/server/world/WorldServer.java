@@ -14,7 +14,6 @@ import dev.spiritworker.game.data.def.DistrictDef;
 import dev.spiritworker.game.managers.ChatManager;
 import dev.spiritworker.game.managers.ItemManager;
 import dev.spiritworker.game.managers.MazeManager;
-import dev.spiritworker.game.managers.SystemChatManager;
 import dev.spiritworker.game.map.District;
 import dev.spiritworker.game.map.Maze;
 import dev.spiritworker.netty.tcp.TcpServer;
@@ -29,7 +28,6 @@ public class WorldServer extends TcpServer {
 	private final ChatManager chatHandler;
 	private final ItemManager itemHandler;
 	private final MazeManager mazeManager;
-	private final SystemChatManager sysManager;
 
 	private final Int2ObjectMap<District> districts;
 	private final Set<Maze> mazes;
@@ -39,10 +37,6 @@ public class WorldServer extends TcpServer {
 	private final ExecutorService pool;
 
 	private Map<String, GameCharacter> characters;
-	// 4 это айди SYSTEM в БД
-	public GameCharacter getSystemCharacter() {
-		return characters.get("SYSTEM");
-	}
 	
 	public WorldServer(GameServer gameServer, InetSocketAddress address, Map<String, GameCharacter> allCharacters) {
 		super(address);
@@ -53,7 +47,6 @@ public class WorldServer extends TcpServer {
 		this.itemHandler = new ItemManager(this);
 		this.mazeManager = new MazeManager(this);
 
-		this.sysManager = new SystemChatManager(this.getSystemCharacter(), this.gameServer);
 		this.districts = new Int2ObjectOpenHashMap<District>();
 		this.setupDistricts();
 
@@ -88,8 +81,6 @@ public class WorldServer extends TcpServer {
 	public ItemManager getItemManager() {
 		return itemHandler;
 	}
-
-	public SystemChatManager getSystemChatManager() { return sysManager; }
 	
 	public District getDistrictById(int id) {
 		return districts.get(id);

@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91f8db8e-ae97-4336-8fd3-02238c5aa7e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/SystemChatManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/SpiritWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/SpiritWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/ChatManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/ChatManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/CommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/SystemChatManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/net/packet/PacketBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/net/packet/PacketBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/server/game/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/server/game/GameServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/server/world/WorldServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/server/world/WorldServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

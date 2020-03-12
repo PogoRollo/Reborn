@@ -237,24 +237,9 @@ public class CommandHandler {
 			String[] split = raw.split(" ");
 
 			Position newPosition = new Position(Integer.parseInt(split[0]) * 100, Integer.parseInt(split[1]) * 100, Integer.parseInt(split[2]) * 100);
-			SpiritWorker.getLogger().error("New Position character - " + character.getName() + " = x: " + split[0] + ", y: " + split[1] + ", z: " + split[2]);
+			SpiritWorker.getLogger().info("New Position character - " + character.getName() + " = x: " + split[0] + ", y: " + split[1] + ", z: " + split[2]);
 			character.getPosition().set(newPosition);
 			session.sendPacket(PacketBuilder.sendClientUpdatePosition(character));
-		}
-	}
-
-	public static class System extends PlayerCommand {
-		public System() { this.setLevel(0); }
-
-		@Override
-		public void execute(GameCharacter character, String raw) {
-			// sa
-			for(GameMap map : session.getServer().getSystemChatManager().getMaps()) {
-				SpiritWorker.getLogger().info("system char" + session.getServer().getSystemChatManager().getSystem().getName());
-				map.broadcastPacket(PacketBuilder.sendClientSystemChat(
-					session.getServer().getSystemChatManager().getSystem(), raw));
-			}
-
 		}
 	}
 }

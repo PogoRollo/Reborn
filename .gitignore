@@ -47,8 +47,6 @@ tmp/
 
 # SpiritWorker
 .idea
-.idea/workspace.xml
-src/main/java/dev/spiritworker/.idea
 resources
 packets
 config.json

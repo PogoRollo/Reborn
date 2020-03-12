@@ -1,0 +1,225 @@
+@startuml
+
+title __PACKET's Class Diagram__\n
+
+  namespace dev.spiritworker {
+    namespace net.packet {
+      class dev.spiritworker.net.packet.ErrorCodes {
+          {static} + CHARACTER_CREATION_NAME_TAKEN : int
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace net.packet {
+      class dev.spiritworker.net.packet.PacketBuilder {
+          {static} + sendClientActivateSkillResponse()
+          {static} + sendClientAppearanceInfo()
+          {static} + sendClientAppearancePick()
+          {static} + sendClientCancelGesture()
+          {static} + sendClientChannelInfo()
+          {static} + sendClientCharacterInfo()
+          {static} + sendClientCharacterList()
+          {static} + sendClientCharacterLoadTitle()
+          {static} + sendClientCharacterUpdate()
+          {static} + sendClientCharacterUpdate()
+          {static} + sendClientCharacterUpdateSpecialOptionList()
+          {static} + sendClientCharacterUpdateTitle()
+          {static} + sendClientChatNormal()
+          {static} + sendClientConnectGameResponse()
+          {static} + sendClientDoGesture()
+          {static} + sendClientEnterGameServerResponse()
+          {static} + sendClientEnterMaze()
+          {static} + sendClientFinishMaze()
+          {static} + sendClientFinishMazeOpenPortal()
+          {static} + sendClientGestureSlotUpdate()
+          {static} + sendClientItemBankInfo()
+          {static} + sendClientItemBreak()
+          {static} + sendClientItemCombine()
+          {static} + sendClientItemCreate()
+          {static} + sendClientItemDivide()
+          {static} + sendClientItemDyeResult()
+          {static} + sendClientItemInvenInfo()
+          {static} + sendClientItemMove()
+          {static} + sendClientItemOpenSlotInfo()
+          {static} + sendClientItemOpenSlotInfo()
+          {static} + sendClientItemUpdate()
+          {static} + sendClientItemUpdateCount()
+          {static} + sendClientItemUpdateDye()
+          {static} + sendClientItemUpdateSlotInfo()
+          {static} + sendClientItemUpgrade()
+          {static} + sendClientJoinMap()
+          {static} + sendClientKeepAlive()
+          {static} + sendClientLoginResult()
+          {static} + sendClientMazePortalUpdate()
+          {static} + sendClientNpcsInfo()
+          {static} + sendClientOpenPackageResult()
+          {static} + sendClientOptionLoad()
+          {static} + sendClientPlayGameResponse()
+          {static} + sendClientPlayerMovement()
+          {static} + sendClientPlayerMovementJump()
+          {static} + sendClientPlayerMovementStop()
+          {static} + sendClientPlayerRemove()
+          {static} + sendClientPlayerSpawn()
+          {static} + sendClientPlayersInfo()
+          {static} + sendClientRequestLoginServer()
+          {static} + sendClientServerList()
+          {static} + sendClientServerSelect()
+          {static} + sendClientSkillDamageInfo()
+          {static} + sendClientSkillsInfo()
+          {static} + sendClientSpawnMonster()
+          {static} + sendClientSpawnMonsters()
+          {static} + sendClientUpdatePosition()
+          {static} + sendClientUpdateSkillLoadout()
+          {static} + sendClientUpdateSkillPoints()
+          {static} + sendClientUpgradeSkill()
+          {static} + sendClientUpgradeSkillModifier()
+          {static} + sendErrorCode()
+          {static} + sendServerDate()
+          {static} + sendServerSpecialOption()
+          {static} + sendServerVersion()
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace net.packet {
+      class dev.spiritworker.net.packet.PacketOpcodes {
+          {static} + ClientActivateSkill : int
+          {static} + ClientActivateSkillResponse : int
+          {static} + ClientAppearanceInfo : int
+          {static} + ClientAppearancePick : int
+          {static} + ClientCancelGesture : int
+          {static} + ClientCancelGestureRequest : int
+          {static} + ClientChannelInfo : int
+          {static} + ClientCharacterInfoRequest : int
+          {static} + ClientCharacterInfoResponse : int
+          {static} + ClientCharacterList : int
+          {static} + ClientCharacterListRequest : int
+          {static} + ClientCharacterLoadTitle : int
+          {static} + ClientCharacterUpdate : int
+          {static} + ClientCharacterUpdateSpecialOptionList : int
+          {static} + ClientCharacterUpdateTitle : int
+          {static} + ClientChatGmCommand : int
+          {static} + ClientChatMegaphone : int
+          {static} + ClientChatNormal : int
+          {static} + ClientChatTrade : int
+          {static} + ClientChatWhisper : int
+          {static} + ClientConnectGameResponse : int
+          {static} + ClientConnectGameServer : int
+          {static} + ClientConnectWorldServer : int
+          {static} + ClientCreateCharacter : int
+          {static} + ClientCreateMaze : int
+          {static} + ClientDeleteCharacter : int
+          {static} + ClientDoGesture : int
+          {static} + ClientEnterGameServer : int
+          {static} + ClientEnterGameServerResponse : int
+          {static} + ClientEnteredMaze : int
+          {static} + ClientFinishMaze : int
+          {static} + ClientFinishMazeOpenPortal : int
+          {static} + ClientGestureInfo : int
+          {static} + ClientGestureSlotUpdate : int
+          {static} + ClientItemBankInfo : int
+          {static} + ClientItemBreak : int
+          {static} + ClientItemCombine : int
+          {static} + ClientItemCreate : int
+          {static} + ClientItemDisassemble : int
+          {static} + ClientItemDivide : int
+          {static} + ClientItemDye : int
+          {static} + ClientItemExchange : int
+          {static} + ClientItemInvenInfo : int
+          {static} + ClientItemMake : int
+          {static} + ClientItemMove : int
+          {static} + ClientItemOpenSlotInfo : int
+          {static} + ClientItemUpdate : int
+          {static} + ClientItemUpdateCount : int
+          {static} + ClientItemUpdateDye : int
+          {static} + ClientItemUpdateSlotInfo : int
+          {static} + ClientItemUpgrade : int
+          {static} + ClientItemUse : int
+          {static} + ClientJoinMap : int
+          {static} + ClientJoinServer : int
+          {static} + ClientKeepAlive : int
+          {static} + ClientLeaveMaze : int
+          {static} + ClientLogin : int
+          {static} + ClientLoginGameForge : int
+          {static} + ClientLoginResult : int
+          {static} + ClientLogoutServerReq : int
+          {static} + ClientMazePortalEnter : int
+          {static} + ClientMazePortalUpdate : int
+          {static} + ClientMonsterAdd : int
+          {static} + ClientMovementJump : int
+          {static} + ClientMovementMove : int
+          {static} + ClientMovementStop : int
+          {static} + ClientNpcsInfo : int
+          {static} + ClientOptionLoad : int
+          {static} + ClientPartyAccept : int
+          {static} + ClientPartyCancel : int
+          {static} + ClientPartyChangeMaster : int
+          {static} + ClientPartyInvite : int
+          {static} + ClientPartyKickOut : int
+          {static} + ClientPartyLeave : int
+          {static} + ClientPartyUpdateInfo : int
+          {static} + ClientPlayGameResponse : int
+          {static} + ClientPlayerMovementJump : int
+          {static} + ClientPlayerMovementMove : int
+          {static} + ClientPlayerMovementStop : int
+          {static} + ClientPlayerRemove : int
+          {static} + ClientPlayerSpawn : int
+          {static} + ClientPlayersInfo : int
+          {static} + ClientPlayersRequest : int
+          {static} + ClientPostRecvList : int
+          {static} + ClientPostSendList : int
+          {static} + ClientQuitMaze : int
+          {static} + ClientRequestLogout : int
+          {static} + ClientResetPositionRequest : int
+          {static} + ClientSelectCharacter : int
+          {static} + ClientServerConnectRequest : int
+          {static} + ClientServerList : int
+          {static} + ClientServerListRequest : int
+          {static} + ClientServerSelect : int
+          {static} + ClientShopBuy : int
+          {static} + ClientShopSell : int
+          {static} + ClientSkillDamageInfo : int
+          {static} + ClientSkillsInfo : int
+          {static} + ClientSpawnMonsters : int
+          {static} + ClientUpdatePosition : int
+          {static} + ClientUpdateSkillLoadout : int
+          {static} + ClientUpdateSkillPoints : int
+          {static} + ClientUpgradeSkill : int
+          {static} + ClientUpgradeSkillModifier : int
+          {static} + ClientViewPlayerInfo : int
+          {static} + CurrentServerDate : int
+          {static} + CurrentServerVersion : int
+          {static} + ErrorCode : int
+          {static} + ServerSpecialOption : int
+          {static} + Unknown : int
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace net.packet {
+      class dev.spiritworker.net.packet.PacketUtils {
+          {static} + readString16()
+          {static} + readString16()
+          {static} + readString8()
+          {static} + readString8()
+      }
+    }
+  }
+  
+
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

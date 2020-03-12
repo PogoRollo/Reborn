@@ -1,0 +1,188 @@
+@startuml
+
+title __MANAGERS's Class Diagram__\n
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace managers {
+        class dev.spiritworker.game.managers.ChatManager {
+            - server : WorldServer
+            + ChatManager()
+            + getServer()
+            + handleNormalChat()
+            + handlePartyChat()
+            + handleWhisperChat()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace managers {
+        class dev.spiritworker.game.managers.CommandHandler {
+            {static} + session : WorldSession
+            {static} - list : HashMap<String, PlayerCommand>
+            {static} + handle()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace managers {
+        class dev.spiritworker.game.managers.CommandHandler.ChangeStat {
+            + ChangeStat()
+            + execute()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace managers {
+        class dev.spiritworker.game.managers.CommandHandler.ClearInventory {
+            + ClearInventory()
+            + execute()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace managers {
+        class dev.spiritworker.game.managers.CommandHandler.GetPosition {
+            + GetPosition()
+            + execute()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace managers {
+        class dev.spiritworker.game.managers.CommandHandler.Give {
+            + Give()
+            + execute()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace managers {
+        class dev.spiritworker.game.managers.CommandHandler.GoToPos {
+            + GoToPos()
+            + execute()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace managers {
+        abstract class dev.spiritworker.game.managers.CommandHandler.PlayerCommand {
+            + level : int
+            {abstract} + execute()
+            + setLevel()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace managers {
+        class dev.spiritworker.game.managers.CommandHandler.StarterPack {
+            + StarterPack()
+            + execute()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace managers {
+        class dev.spiritworker.game.managers.CommandHandler.Teleport {
+            + Teleport()
+            + execute()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace managers {
+        class dev.spiritworker.game.managers.ItemManager {
+            - server : WorldServer
+            - upgradeChances : double[]
+            + ItemManager()
+            + dyeItem()
+            + getServer()
+            + getUpgradeChanceOf()
+            + increaseInventorySlots()
+            + upgradeItem()
+            + upgradeItem()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace managers {
+        class dev.spiritworker.game.managers.MazeManager {
+            - server : WorldServer
+            + MazeManager()
+            + createMaze()
+            + getServer()
+        }
+      }
+    }
+  }
+  
+
+  dev.spiritworker.game.managers.CommandHandler +-down- dev.spiritworker.game.managers.CommandHandler.ChangeStat
+  dev.spiritworker.game.managers.CommandHandler +-down- dev.spiritworker.game.managers.CommandHandler.ClearInventory
+  dev.spiritworker.game.managers.CommandHandler +-down- dev.spiritworker.game.managers.CommandHandler.GetPosition
+  dev.spiritworker.game.managers.CommandHandler +-down- dev.spiritworker.game.managers.CommandHandler.Give
+  dev.spiritworker.game.managers.CommandHandler +-down- dev.spiritworker.game.managers.CommandHandler.GoToPos
+  dev.spiritworker.game.managers.CommandHandler +-down- dev.spiritworker.game.managers.CommandHandler.PlayerCommand
+  dev.spiritworker.game.managers.CommandHandler +-down- dev.spiritworker.game.managers.CommandHandler.StarterPack
+  dev.spiritworker.game.managers.CommandHandler +-down- dev.spiritworker.game.managers.CommandHandler.Teleport
+  dev.spiritworker.game.managers.CommandHandler.ChangeStat -up-|> dev.spiritworker.game.managers.CommandHandler.PlayerCommand
+  dev.spiritworker.game.managers.CommandHandler.ClearInventory -up-|> dev.spiritworker.game.managers.CommandHandler.PlayerCommand
+  dev.spiritworker.game.managers.CommandHandler.GetPosition -up-|> dev.spiritworker.game.managers.CommandHandler.PlayerCommand
+  dev.spiritworker.game.managers.CommandHandler.Give -up-|> dev.spiritworker.game.managers.CommandHandler.PlayerCommand
+  dev.spiritworker.game.managers.CommandHandler.GoToPos -up-|> dev.spiritworker.game.managers.CommandHandler.PlayerCommand
+  dev.spiritworker.game.managers.CommandHandler.StarterPack -up-|> dev.spiritworker.game.managers.CommandHandler.PlayerCommand
+  dev.spiritworker.game.managers.CommandHandler.Teleport -up-|> dev.spiritworker.game.managers.CommandHandler.PlayerCommand
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

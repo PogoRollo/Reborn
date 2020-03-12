@@ -43,6 +43,7 @@ tmp/
 .recommenders
 
 # SpiritWorker
+.idea
 resources
 packets
 config.json

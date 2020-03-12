@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91f8db8e-ae97-4336-8fd3-02238c5aa7e0" name="Default Changelist" comment="">
+    <list default="true" id="d92fb98c-5cb7-46a7-9a0d-e429a3e652a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Reborn.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/ChatManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/ChatManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/CommandHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/game/managers/SystemChatManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/net/packet/PacketBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/net/packet/PacketBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/spiritworker/server/world/WorldServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/spiritworker/server/world/WorldServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +40,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
@@ -80,13 +80,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="91f8db8e-ae97-4336-8fd3-02238c5aa7e0" name="Default Changelist" comment="" />
+      <changelist id="d92fb98c-5cb7-46a7-9a0d-e429a3e652a9" name="Default Changelist" comment="" />
       <created>1581854654526</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581854654526</updated>
+      <workItem from="1584038381815" duration="109000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582744085845">
@@ -113,10 +117,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581872256368" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1581854662095">
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1584038381893">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581854662095" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584038381893" />
     <state x="666" y="138" key="refactoring.ChangeSignatureDialog" timestamp="1583873385124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

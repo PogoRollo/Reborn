@@ -1,7 +1,7 @@
 # SpiritWorker
 Эмулятор WIP-сервера для SoulWorker (GF 1.7.20.2). 
 Основными разработчиками проекта Reborn на данный момент являются: 
-* [sollosollo4](github.com/sollosollo4)
+* [sollosollo4](https://github.com/sollosollo4)
 * [a8an7a](https://github.com/a8an7a)
 
 # Запуск сервера и клиента
@@ -21,13 +21,16 @@
 * java -jar spiritworker.jar -game -> запустит только сервер игры
 
 ### Подключение от клиента
-Запустите клиент с параметрами командной строки `SoulWorker.exe --authCode aaaaa --ip 127.0.0.1 --port 9000` as its launch arguments
+Запустите клиент с параметрами командной строки `SoulWorker.exe --authCode aaaaa --ip 127.0.0.1 --port 9000`.
+* aaaaa - token
+* 127.0.0.1 - ip AuthServer
+* 9000 - port AuthServer
 
 ### Игровые команды
-`!give [item id] [кол-во]` - Выдаёт {количество} предмета с {id}
-`!starterpack` - Выдаёт полный набло Vistor's armor и Tathata’s jewelry
-`!changestat [stat id] [value]` - Высстанавливает определенному айди характеристики значение {value}
-`!teleport [maze id]` - телепортирует игрока в другой город
+`!give [item id] [кол-во]` - Выдаёт {количество} предмета с {id}.
+`!starterpack` - Выдаёт полный набло Vistor's armor и Tathata’s jewelry.
+`!changestat [stat id] [value]` - Высстанавливает определенному айди характеристики значение {value}.
+`!teleport [maze id]` - телепортирует игрока в другой город.
 *[10003] ROCCOTOWN
 *[10021] CANDUSCITY
 *[10031] FRACECITY

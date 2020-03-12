@@ -116,6 +116,7 @@ public class Maze extends GameMap implements Runnable {
 
 	@Override
 	public synchronized void run() {
+
 	}
 	
 	public void onEnter(GameCharacter character) {

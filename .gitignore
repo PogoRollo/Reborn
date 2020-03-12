@@ -4,6 +4,9 @@
 # Log file
 *.log
 
+# Plant UML Diagrams
+*.plantuml
+
 # BlueJ files
 *.ctxt
 
@@ -43,7 +46,12 @@ tmp/
 .recommenders
 
 # SpiritWorker
+.idea
+src/main/java/dev/spiritworker/.idea
 resources
 packets
 config.json
 spiritworker.jar
+
+# Other
+src/main/java/dev/spiritworker/game/data/def/MazeDef_test.java

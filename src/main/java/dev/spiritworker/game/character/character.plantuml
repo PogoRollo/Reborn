@@ -1,0 +1,361 @@
+@startuml
+
+title __CHARACTER's Class Diagram__\n
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace character {
+        enum CharacterClass {
+          CHII
+          ERWIN
+          HARU
+          IRIS
+          JIN
+          LILY
+          STELLA
+          baseStats
+          id
+          loadout
+          map
+          skills
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace character {
+        class dev.spiritworker.game.character.CharacterClass.BaseStats {
+            - accuracy : float
+            - accuracyPerLevel : float
+            - attackMax : float
+            - attackMaxPerLevel : float
+            - attackMin : float
+            - attackMinPerLevel : float
+            - critChance : float
+            - critChancePerLevel : float
+            - critDamage : float
+            - critDamagePerLevel : float
+            - defence : float
+            - defencePerLevel : float
+            - evasion : float
+            - evasionPerLevel : float
+            - health : float
+            - healthPerLevel : float
+            - superArmor : float
+            - superArmorPerLevel : float
+            + getAccuracy()
+            + getAccuracyPerLevel()
+            + getAttackMax()
+            + getAttackMaxPerLevel()
+            + getAttackMin()
+            + getAttackMinPerLevel()
+            + getCritChance()
+            + getCritChancePerLevel()
+            + getCritDamage()
+            + getCritDamagePerLevel()
+            + getDefence()
+            + getDefencePerLevel()
+            + getEvasion()
+            + getEvasionPerLevel()
+            + getHealth()
+            + getHealthPerLevel()
+            + getSuperArmor()
+            + getSuperArmorPerLevel()
+            + setAccuracy()
+            + setAccuracyPerLevel()
+            + setAttackMax()
+            + setAttackMaxPerLevel()
+            + setAttackMin()
+            + setAttackMinPerLevel()
+            + setCritChance()
+            + setCritChancePerLevel()
+            + setCritDamage()
+            + setCritDamagePerLevel()
+            + setDefence()
+            + setDefencePerLevel()
+            + setEvasion()
+            + setEvasionPerLevel()
+            + setHealth()
+            + setHealthPerLevel()
+            + setSuperArmor()
+            + setSuperArmorPerLevel()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace character {
+        class dev.spiritworker.game.character.CharacterSkills {
+            - character : GameCharacter
+            - id : int
+            - loadout : int[][]
+            - skillMap : Int2ObjectMap<Skill>
+            - skills : Collection<Skill>
+            + CharacterSkills()
+            + CharacterSkills()
+            + addSkill()
+            + getCharacter()
+            + getLoadout()
+            + getMap()
+            + getSkillById()
+            + getSkillInLoadout()
+            + removeSkill()
+            + replaceSkill()
+            + save()
+            + setCharacter()
+            + setSkillInLoadout()
+            + upgradeSkill()
+            + upgradeSkillModifier()
+            + validate()
+            - onLoad()
+            - onSave()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace character {
+        class dev.spiritworker.game.character.CharacterStats {
+            {static} - ZERO : Float
+            - accuracy : Stat
+            - attackMax : Stat
+            - attackMin : Stat
+            - attackSpeed : Stat
+            - character : GameCharacter
+            - critChance : Stat
+            - critDamage : Stat
+            - critResist : Stat
+            - damageReduction : Stat
+            - defence : Stat
+            - evasion : Stat
+            - hp : Stat
+            - hpMax : Stat
+            - moveSpeed : Stat
+            - stamina : Stat
+            - staminaPercent : Stat
+            - staminaRegen : Stat
+            - statsMap : Int2ObjectMap<Stat>
+            - updatedStats : Set<Stat>
+            + CharacterStats()
+            + getAccuracy()
+            + getAttackMax()
+            + getAttackMin()
+            + getAttackSpeed()
+            + getBaseStats()
+            + getCharacter()
+            + getCritChance()
+            + getCritResist()
+            + getCritValue()
+            + getDamageReduction()
+            + getDefence()
+            + getEvasion()
+            + getHp()
+            + getMap()
+            + getMaxHp()
+            + getMoveSpeed()
+            + getStamina()
+            + getStaminaPercent()
+            + getStaminaRegen()
+            + getUpdatedStats()
+            + onUpdate()
+            + recalc()
+            - createStat()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace character {
+        class dev.spiritworker.game.character.GameCharacter {
+            - accountId : int
+            - angle : float
+            - appearances : Set<Short>
+            - bp : long
+            - characterClass : CharacterClass
+            - emotes : int[]
+            - energy : int
+            - ether : long
+            - exp : int
+            - extraEnergy : int
+            - eyeColor : short
+            - eyeColorEquipped : short
+            - hairColor : short
+            - hairColorEquipped : short
+            - hairStyle : short
+            - hairStyleEquipped : short
+            - hasLoadedIn : boolean
+            - id : int
+            - inventory : Inventory
+            - level : int
+            - map : GameMap
+            - mapId : int
+            - money : long
+            - name : String
+            - owner : SoulWorkerSession
+            - position : Position
+            - skillPoints : int
+            - skills : CharacterSkills
+            - skinColor : short
+            - skinColorEquipped : short
+            - stats : CharacterStats
+            - type : int
+            - upgradeData : InventoryUpgradeData
+            - upgradeDataBank : BankUpgradeData
+            - usedSkillPoints : int
+            + GameCharacter()
+            + GameCharacter()
+            + addAppearance()
+            + getAccountId()
+            + getAngle()
+            + getAppearances()
+            + getBankUpgradeData()
+            + getBp()
+            + getCharacterClass()
+            + getCurrentEyeColor()
+            + getCurrentHairColor()
+            + getCurrentHairStyle()
+            + getCurrentSkinColor()
+            + getDistrictId()
+            + getEmotes()
+            + getEnergy()
+            + getEquippedEyeColor()
+            + getEquippedHairColor()
+            + getEquippedHairStyle()
+            + getEquippedSkinColor()
+            + getEther()
+            + getExp()
+            + getExpMax()
+            + getExtraEnergy()
+            + getEyeColor()
+            + getGmLevel()
+            + getHairColor()
+            + getHairStyle()
+            + getId()
+            + getInventory()
+            + getInventoryUpgradeData()
+            + getLevel()
+            + getMap()
+            + getMapId()
+            + getMoney()
+            + getName()
+            + getPosition()
+            + getSession()
+            + getSkillPoints()
+            + getSkills()
+            + getSkinColor()
+            + getStats()
+            + getTotalEnergy()
+            + getType()
+            + getUsedSkillPoints()
+            + hasEnoughEnergy()
+            + hasLoadedInMap()
+            + loadSkills()
+            + save()
+            + setAngle()
+            + setBankUpgradeData()
+            + setBp()
+            + setEquippedEyeColor()
+            + setEquippedHairColor()
+            + setEquippedHairStyle()
+            + setEquippedSkinColor()
+            + setEther()
+            + setExp()
+            + setEyeColor()
+            + setHairColor()
+            + setHairStyle()
+            + setId()
+            + setLevel()
+            + setLoadStatus()
+            + setMap()
+            + setMapId()
+            + setMoney()
+            + setName()
+            + setSession()
+            + setSkillPoints()
+            + setSkinColor()
+            + setType()
+            + setUsedSkillPoints()
+            + useEnergy()
+            + writeCosmetics()
+            + writeMainData()
+            + writeMetaData()
+            + writePersonalData()
+            - onLoad()
+            - setEnergy()
+            - setExtraEnergy()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace character {
+        class dev.spiritworker.game.character.Skill {
+            - id : int
+            - modifier : int
+            - skillDef : SkillDef
+            + Skill()
+            + Skill()
+            + getDef()
+            + getId()
+            + getModifier()
+            + setId()
+            + setModifier()
+            + toString()
+            + write()
+        }
+      }
+    }
+  }
+  
+
+  namespace dev.spiritworker {
+    namespace game {
+      namespace character {
+        class dev.spiritworker.game.character.Stat {
+            - characterStats : CharacterStats
+            - id : int
+            - updated : boolean
+            - value : float
+            + Stat()
+            + Stat()
+            + get()
+            + getCharacterStats()
+            + getId()
+            + getIntValue()
+            + isUpdated()
+            + set()
+            + setAndUpdate()
+            + write()
+        }
+      }
+    }
+  }
+  
+
+  dev.spiritworker.game.character.CharacterClass o-- dev.spiritworker.game.character.CharacterClass.BaseStats : baseStats
+  dev.spiritworker.game.character.CharacterClass +-down- dev.spiritworker.game.character.CharacterClass.BaseStats
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,16 +1,15 @@
 package dev.spiritworker.game.data.def;
 
-import dev.spiritworker.SpiritWorker;
-import dev.spiritworker.game.data.ResourceDef;
-import dev.spiritworker.util.Position;
-
 import java.nio.ByteBuffer;
 
-public class NpcDef extends ResourceDef {
+import dev.spiritworker.SpiritWorker;
+import dev.spiritworker.util.Position;
+import dev.spiritworker.game.data.ResourceDef;
+import dev.spiritworker.game.data.ResourceType;
+import dev.spiritworker.game.data.ResourceType.ResourceIdType;
 
-    public NpcDef(int id) {
-        super(id);
-    }
+@ResourceType(name = "tb_NPC.res", idType = ResourceIdType.INT)
+public class NpcDef extends ResourceDef {
 
     private int id;
 
@@ -29,6 +28,8 @@ public class NpcDef extends ResourceDef {
 
     private ByteBuffer buf;
 
+    public NpcDef(int id) { super(id); }
+
     @Override
     public void loadFromRes(ByteBuffer buf) {
         this.buf = buf;
@@ -37,9 +38,9 @@ public class NpcDef extends ResourceDef {
         this.position = new Position(this.x, this.y, this.z);
     }
 
-    public String getAllInfo()
-    {
-        return "========================== \n" + "ID : " + id + "     buf-1 " + buf.get() +
+    @Override
+    public String toString() {
+        return "========================== \n" + "ID : " + this.id + "     buf-1 " + buf.get() +
                 "   buf-2 " + buf.get() +
                 "   buf-3 " + buf.get() +
                 "   buf-4 " + buf.get() +
@@ -78,39 +79,14 @@ public class NpcDef extends ResourceDef {
     }
 
     @Override
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
 
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
-    }
-
-    public float getAngle() {
-        return angle;
-    }
-
-    public int getMaxHealth() {
-        return maxHealth;
-    }
-
-    public int getWaypoint() {
-        return waypoint;
-    }
-
-    public int getCurrentStageId() {
-        return currentStageId;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public int getRealId() {
-        return realId;
-    }
+    public Position getPosition() { return position; }
+    public void setPosition(Position position) { this.position = position; }
+    public float getAngle() { return angle; }
+    public int getMaxHealth() { return maxHealth; }
+    public int getWaypoint() { return waypoint; }
+    public int getCurrentStageId() { return currentStageId; }
+    public int getLevel() { return level; }
+    public int getRealId() { return realId; }
 }

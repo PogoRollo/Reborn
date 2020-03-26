@@ -3,7 +3,10 @@ package dev.spiritworker.game.data.def;
 import java.nio.ByteBuffer;
 
 import dev.spiritworker.game.data.ResourceDef;
+import dev.spiritworker.game.data.ResourceType;
+import dev.spiritworker.game.data.ResourceType.ResourceIdType;
 
+@ResourceType(name = "tb_Item.res", idType = ResourceIdType.INT)
 public class ItemDef extends ResourceDef {
 	public String path;
 	public String name;

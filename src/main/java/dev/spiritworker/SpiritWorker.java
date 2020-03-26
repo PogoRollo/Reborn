@@ -31,38 +31,35 @@ public class SpiritWorker {
 	public static void main(String[] args) {
 		SpiritWorker.loadConfig();
 		
-		for (String arg : args) {
+		/** for (String arg : args) {
 			if (arg.equalsIgnoreCase("-auth")) {
 				MODE = RunMode.AUTH;
 			} else if (arg.equalsIgnoreCase("-game")) {
 				MODE = RunMode.GAME;
 			}
-		}
+		} */
 		
 		// Load from resources
-		if (MODE != RunMode.AUTH) {
+		/** if (MODE != RunMode.AUTH) {
 			ResourceLoader.loadDefinitions();
-		}
+		} */
+
+		ResourceLoader.loadDefinitions();
 		
 		// Load from database
-		DatabaseManager.initialize();
-		DatabaseHelper.createAccount("Test", "aaaaa");
+		/** DatabaseManager.initialize();
+		DatabaseHelper.createAccount("Test", "aaaaa"); */
 
-		//SoulWorker.createFileWithItems();
-		//SoulWorker.createFileWithMonsters();
-		//SoulWorker.createFileWithNpcs();
-		//SoulWorker.createFileWithDistricts();
+		SoulWorker.initCreate();
 
 		// Run server
-		if (MODE != RunMode.GAME) {
+		/** if (MODE != RunMode.GAME) {
 			AuthServer authServer = new AuthServer();
 			authServer.start();
 		} else {
 			GameServer gameServer = new GameServer(SpiritWorker.getConfig().GameServerId, SpiritWorker.getConfig().GameServerName, new InetSocketAddress(SpiritWorker.getConfig().GameServerIp, SpiritWorker.getConfig().GameServerPort));
 			gameServer.start();
-		}
-
-
+		} */
 	}
 	
 	public static Config getConfig() {

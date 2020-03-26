@@ -103,10 +103,10 @@ public class CommandHandler {
 				count = 1;
 			}
 			
-			if (!SoulWorker.isValidItemId(itemId)) {
+			/** if (!SoulWorker.isValidItemId(itemId)) {
 				return;
-			}
-			
+			} */
+
 			Item item = new Item(itemId);
 			item.setCount(count);
 			character.getInventory().addItem(item);

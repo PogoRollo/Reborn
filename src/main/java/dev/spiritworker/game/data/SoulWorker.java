@@ -25,7 +25,7 @@ public class SoulWorker {
 	private static Int2ObjectMap<ReinforceOptionDef> reinforceOptionDefs  = new Int2ObjectOpenHashMap<ReinforceOptionDef>();
 	private static Int2ObjectMap<ReinforceDef>       reinforceDefs        = new Int2ObjectOpenHashMap<ReinforceDef>();
 	private static Int2ObjectMap<DistrictDef>        districtDef          = new Int2ObjectOpenHashMap<DistrictDef>();
-	private static Int2ObjectMap<ItemDef>            itemDef              = new Int2ObjectOpenHashMap<ItemDef>();
+	private static Int2ObjectMap<ItemDef>            itemDefs             = new Int2ObjectOpenHashMap<ItemDef>();
 
 	public static Int2ObjectMap<MonsterDef>          getMonsterDefs()          { return monsterDefs; }
 	public static Int2ObjectMap<MazeDef>             getMazeDefs()             { return mazeDefs; }
@@ -38,10 +38,14 @@ public class SoulWorker {
 	public static Int2ObjectMap<ReinforceOptionDef>  getReinforceOptionDefs()  { return reinforceOptionDefs; }
 	public static Int2ObjectMap<ReinforceDef>        getReinforceDefs()        { return reinforceDefs; }
 	public static Int2ObjectMap<DistrictDef>         getDistrictDefs()          { return districtDef; }
-	public static Int2ObjectMap<ItemDef>             getItemDefs()              { return itemDef; }
+	public static Int2ObjectMap<ItemDef>             getItemDefs()              { return itemDefs; }
 
 	public static ItemDef getItemDefById(int itemId) {
 		return getItemDefs().get(itemId);
+	}
+
+	public static boolean isValidItemId(int id) {
+		return itemDefs.containsKey(id);
 	}
 
 	public static void initCreate() {

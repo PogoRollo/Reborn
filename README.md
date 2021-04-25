@@ -35,12 +35,12 @@
 
 `!teleport [maze id]` - телепортирует игрока в другой город.
 
-- *[10003] ROCCOTOWN
-- *[10021] CANDUSCITY
-- *[10031] FRACECITY
-- *[10041] RUINFORTRESS
-- *[10051] GRASSCOVERCAMP
-- *[10061] DIPLUCEHORIZON
-- *[11001] GOLDENCITADEL
+- **[10003] ROCCOTOWN
+- **[10021] CANDUSCITY
+- **[10031] FRACECITY
+- **[10041] RUINFORTRESS
+- **[10051] GRASSCOVERCAMP
+- **[10061] DIPLUCEHORIZON
+- **[11001] GOLDENCITADEL
 
 `!gotopos [x] [y] [z]` - перемещает игрока в определенные координаты. Формат xyz - как в игре.

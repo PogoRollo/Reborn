@@ -28,9 +28,13 @@
 
 ### Игровые команды
 `!give [item id] [кол-во]` - Выдаёт {количество} предмета с {id}.
+
 `!starterpack` - Выдаёт полный набло Vistor's armor и Tathata’s jewelry.
+
 `!changestat [stat id] [value]` - Высстанавливает определенному айди характеристики значение {value}.
+
 `!teleport [maze id]` - телепортирует игрока в другой город.
+
 - *[10003] ROCCOTOWN
 - *[10021] CANDUSCITY
 - *[10031] FRACECITY
@@ -38,4 +42,5 @@
 - *[10051] GRASSCOVERCAMP
 - *[10061] DIPLUCEHORIZON
 - *[11001] GOLDENCITADEL
+
 `!gotopos [x] [y] [z]` - перемещает игрока в определенные координаты. Формат xyz - как в игре.
